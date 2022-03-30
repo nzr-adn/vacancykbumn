@@ -1,157 +1,75 @@
-<!DOCTYPE html>
-
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4 & Angular 8
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-	<!-- begin::Head -->
-	<head>
-		<base href="">
-		<meta charset="utf-8" />
-		<title>HC Kementerian Badan Usaha Milik Negara</title>
-		<meta name="description" content="Updates and statistics">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-		<!--begin::Fonts -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
-
-		<!--end::Fonts -->
-
-		<!--begin::Page Vendors Styles(used by this page) -->
-
-		<!--end::Page Vendors Styles -->
-
-		@yield('addbeforecss')
-		<!--begin::Global Theme Styles(used by all pages) -->
-		<link href="{{ asset('/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-
-		<!--end::Global Theme Styles -->
-
-		<!--begin::Layout Skins(used by all pages) -->
-		<link href="{{ asset('/assets/css/skins/header/base/light.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('/assets/css/skins/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('/assets/css/skins/brand/light.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('/assets/css/skins/aside/light.css') }}" rel="stylesheet" type="text/css" />
-
-		<!--end::Layout Skins -->
-		@yield('addaftercss')
-		<link href="{{ asset('/assets/favicon.ico') }}" rel="shortcut icon" />
-	</head>
-
-	<!-- end::Head -->
-
-	<!-- begin::Body -->
-	<body class="kt-page--loading-enabled kt-page--loading kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
-
-		<!--[html-partial:include:{"file":"partials/_page-loader.html"}]/-->
-
-		<!--[html-partial:include:{"file":"layout.html"}]/-->
-
-		<div class="modal fade draggable-modal" id="winform" tabindex="-1" role="dialog" data-backdrop="static" data-animation="blur" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content kt-portlet">
-                    <div class="modal-header">
-                        <h5 class="modal-title"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade draggable-modal" id="winformorang" tabindex="-1" role="dialog" data-backdrop="static" data-animation="blur" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-                <div class="modal-content kt-portlet">
-                    <div class="modal-header">
-                        <h5 class="modal-title"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-		<!-- begin::Global Config(global config for global JS sciprts) -->
-		<script>
-			var KTAppOptions = {
-				"colors": {
-					"state": {
-						"brand": "#5d78ff",
-						"dark": "#282a3c",
-						"light": "#ffffff",
-						"primary": "#5867dd",
-						"success": "#34bfa3",
-						"info": "#36a3f7",
-						"warning": "#ffb822",
-						"danger": "#fd3995"
-					},
-					"base": {
-						"label": [
-							"#c5cbe3",
-							"#a1a8c3",
-							"#3d4465",
-							"#3e4466"
-						],
-						"shape": [
-							"#f0f3ff",
-							"#d9dffa",
-							"#afb4d4",
-							"#646c9a"
-						]
-					}
-				}
-			};
-		</script>
-
-		<!-- end::Global Config -->
-
-		<!--begin::Global Theme Bundle(used by all pages) -->
-		<script src="{{ asset('/assets/plugins/global/plugins.bundle.js') }}" type="text/javascript"></script>
-		<script src="{{ asset('/assets/js/scripts.bundle.js') }}" type="text/javascript"></script>
-
-		<!--end::Global Theme Bundle -->
-
-		<!--begin::Page Vendors(used by this page) -->
-		<script src="{{ asset('/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}" type="text/javascript"></script>
-		{{-- <script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript"></script>
-		<script src="{{ asset('/assets/plugins/custom/gmaps/gmaps.js') }}" type="text/javascript"></script> --}}
-
-		<!--end::Page Vendors -->
-
-		<!--begin::Page Scripts(used by this page) -->
-		<script src="{{ asset('/assets/js/pages/dashboard.js') }}" type="text/javascript"></script>
-
-		<!--end::Page Scripts -->
-		@yield('script')
-        <script type="text/javascript" src="{{asset('js/generalfunction.js')}}"></script>
-        <script type="text/javascript">
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-        </script>
-        @yield('addafterjs')
-	</body>
-
-	<!-- end::Body -->
-</html>
+@section('header')
+<!--begin::Header-->
+<div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+						<!--begin::Container-->
+						<div class="container">
+							<!--begin::Wrapper-->
+							<div class="d-flex align-items-center justify-content-between">
+								<!--begin::Logo-->
+								<div class="d-flex align-items-center flex-equal">
+									<!--begin::Mobile menu toggle-->
+									<button class="btn btn-icon btn-active-color-primary me-3 d-flex d-lg-none" id="kt_landing_menu_toggle">
+										<!--begin::Svg Icon | path: icons/duotone/Text/Menu.svg-->
+										<span class="svg-icon svg-icon-2hx">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<rect x="0" y="0" width="24" height="24" />
+													<rect fill="#000000" x="4" y="5" width="16" height="3" rx="1.5" />
+													<path d="M5.5,15 L18.5,15 C19.3284271,15 20,15.6715729 20,16.5 C20,17.3284271 19.3284271,18 18.5,18 L5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 Z M5.5,10 L18.5,10 C19.3284271,10 20,10.6715729 20,11.5 C20,12.3284271 19.3284271,13 18.5,13 L5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z" fill="#000000" opacity="0.3" />
+												</g>
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</button>
+									<!--end::Mobile menu toggle-->
+									<!--begin::Logo image-->
+									<a href="/home">
+										<img alt="Logo" src="{{ asset('assets/media/logos/logo-landing.png') }}" class="logo-default " style="width: 90px;" />
+										<img alt="Logo" src="{{ asset('assets/media/logos/logo-landing.png') }}" class="logo-sticky " style="width: 70px;" />
+									</a>
+									<!--end::Logo image-->
+								</div>
+								<!--end::Logo-->
+								<!--begin::Menu wrapper-->
+								<div class="d-lg-block" id="kt_header_nav_wrapper">
+									<div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="200px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
+										<!--begin::Menu-->
+										<div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-500 menu-state-title-primary nav nav-flush fs-5 fw-bold" id="kt_landing_menu">
+											<!--begin::Menu item-->
+											<div class="menu-item">
+												<!--begin::Menu link-->
+												<a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#kt_body" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Home</a>
+												<!--end::Menu link-->
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item">
+												<!--begin::Menu link-->
+												<a class="menu-link nav-link py-3 px-4 px-xxl-6" href="/faq" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Bantuan</a>
+												<!--end::Menu link-->
+											</div>
+											<!--end::Menu item-->
+											<!--begin::Menu item-->
+											<div class="menu-item">
+												<!--begin::Menu link-->
+												<a class="menu-link nav-link py-3 px-4 px-xxl-6" href="/contactus" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Kontak</a>
+												<!--end::Menu link-->
+											</div>
+											<!--end::Menu item-->
+										</div>
+										<!--end::Menu-->
+									</div>
+								</div>
+								<!--end::Menu wrapper-->
+								<!--begin::Toolbar-->
+								<div class="flex-equal text-end ms-1">
+									<a href="/sign-in" class="btn btn-lan-login">Daftar</a>
+								</div>
+								<!--end::Toolbar-->
+							</div>
+							<!--end::Wrapper-->
+						</div>
+						<!--end::Container-->
+					</div>
+					<!--end::Header-->
+@endsection
