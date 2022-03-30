@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Peserta;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class ContactUsController extends Controller
+class BerandaController extends Controller
 {
     public function __construct()
     {
-        $this->__route = 'landing.contactus';
+        $this->__route = 'peserta.beranda';
     }
 
     /**
@@ -19,15 +20,12 @@ class ContactUsController extends Controller
     public function index()
     {
 
-
         return view($this->__route,[
-            'pagetitle' => 'Contact US',
+            'pagetitle' => 'Beranda',
 
             'breadcrumb' => [
 
             ],
-            // 'user_guide' => asset($this->userguidefile_url.@$user_guide->filename)
-
         ]);
     }
 }
