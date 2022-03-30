@@ -4,17 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
+class RegisterController extends Controller
 {
     public function __construct()
     {
-        $this->__route = 'auth.login';
+        $this->__route = 'auth.register';
     }
 
     public function index()
     {
         return view($this->__route, [
-            'title' => 'Login',
+            'title' => 'Register',
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        
     }
 }
