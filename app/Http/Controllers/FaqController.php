@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->__route = 'landing.faq';
-    //     //$this->userguidefile_url = Config::get('folder.userguidefile_url');
-    // }
+    public function __construct()
+    {
+        $this->__route = 'landing.faq';
+        //$this->userguidefile_url = Config::get('folder.userguidefile_url');
+    }
 
     /**
      * Show the application dashboard.
