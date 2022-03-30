@@ -32,7 +32,7 @@ Route::get('/contactus', [ContactUsController::class, 'index'])->name('contactus
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'store'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.post');
 
 // Peserta
 Route::prefix('peserta')->group(function(){
