@@ -18,7 +18,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<head>
 		<base href="">
 		<meta charset="utf-8" />
-		<title>HC Kementerian Badan Usaha Milik Negara</title>
+		<title>Portal Kementerian Badan Usaha Milik Negara</title>
 		<meta name="description" content="Updates and statistics">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- CSRF Token -->
@@ -56,10 +56,14 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!-- begin::Body -->
 	<body class="kt-page--loading-enabled kt-page--loading kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
 
-        <div class="container">
-            @yield('content')
-        </div>
 
+        @yield('header')
+
+        <!-- <div class="container"> -->
+            @yield('content')
+        <!-- </div> -->
+
+        @yield('footer')
 		<!-- begin::Global Config(global config for global JS sciprts) -->
 		<script>
 			var KTAppOptions = {
@@ -108,7 +112,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Page Vendors -->
 
 		<!--begin::Page Scripts(used by this page) -->
-		<script src="{{ asset('/assets/js/pages/dashboard.js') }}" type="text/javascript"></script>
+		<!-- <script src="{{ asset('/assets/js/pages/dashboard.js') }}" type="text/javascript"></script> -->
 
 		<!--end::Page Scripts -->
 		@yield('script')
