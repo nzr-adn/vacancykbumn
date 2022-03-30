@@ -30,7 +30,7 @@ Route::get('/contactus', [ContactUsController::class, 'index'])->name('contactus
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
-Route::post('/register', [RegisterController::class, 'store'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.post');
 
 // Route::get('auth/logout', 'Auth\AuthController@logout');
 // Route::get('auth/login', 'Auth\AuthController@login');
