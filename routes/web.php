@@ -7,6 +7,8 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\LoginController;
 
+use App\Http\Controllers\Peserta\BerandaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,10 +29,21 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::get('/contactus', [ContactUsController::class, 'index'])->name('contactus');
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register');
+
+// Peserta
+Route::prefix('peserta')->group(function(){
+    Route::get('beranda', [BerandaController::class, 'index'])->name('peserta.beranda');
+});
+
+// Admin
+// Route::prefix('admin')->group(function(){
+//     Route::get('index', 'Admin\DashboardController@index')->name('admin.dashboard.index');
+// });
+
 
 // Route::get('auth/logout', 'Auth\AuthController@logout');
 // Route::get('auth/login', 'Auth\AuthController@login');
