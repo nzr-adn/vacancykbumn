@@ -23,6 +23,7 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
+		<meta name="csrf-token" content="{{ csrf_token() }}" />
 		<link rel="canonical" href="Https://preview.keenthemes.com/metronic8" />
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 		<!--begin::Fonts-->
@@ -67,7 +68,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Wrapper-->
 						<div class="w-lg-600px p-10 p-lg-15 mx-auto">
 							<!--begin::Form-->
-							<form action="/register" method="POST" class="form w-100" novalidate="novalidate" id="kt_sign_up_form">
+							<form method="POST" class="form w-100" novalidate="novalidate" id="kt_sign_up_form">
 								<!--begin::Heading-->
 								<div class="mb-10 text-center">
 									<!--begin::Title-->
@@ -86,7 +87,17 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Col-->
 									
 										<label class="form-label fw-bolder text-dark fs-6">Nama Lengkap</label>
-										<input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="first-name" autocomplete="off" />
+										<input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="name" autocomplete="off" />
+									<!--end::Col-->
+									
+								</div>
+								<!--end::Input group-->
+								<!--begin::Input group-->
+								<div class="row fv-row mb-5">
+									<!--begin::Col-->
+									
+										<label class="form-label fw-bolder text-dark fs-6">NIK</label>
+										<input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="nik" autocomplete="off" />
 									<!--end::Col-->
 									
 								</div>
@@ -172,4 +183,34 @@ License: For each use you must have a valid license purchased only from above li
 		<!--end::Javascript-->
 	</body>
 	<!--end::Body-->
+
+	<script type="text/javascript">
+   
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+	   
+		$("#kt_sign_up_submit").click(function(e){
+			console.log("Submit Register");
+			e.preventDefault();
+   
+        var name = $("input[name=name]").val();
+		var nik = $("input[name=nik]").val();
+		var email = $("input[name=email]").val();
+        var password = $("input[name=password]").val();
+		
+		console.log(nik);
+        $.ajax({
+           type:'POST',
+           url:"{{ route('register.post') }}",
+           data:{name:name, password:password, email:email, nik:nik},
+           success:function(data){
+              alert(data.success);
+           }
+        });
+		});
+	</script>
+
 </html>
